@@ -12,15 +12,16 @@ body {
 nav {
     background-color: #6096ba;
     color: #001233 !important;
+    padding: 20px;
 }
 .top-bar__name {
     display: grid;
     grid-template-columns: 20px auto;
     grid-template-rows: auto;
     grid-template-areas: 
-      "hamburger header ";
+      "hamburger header"
+      "hamburger subheader";
     align-items: center;
-    padding: 0 20px;
 }
 
 .top-bar__name i {
@@ -31,10 +32,16 @@ nav {
 nav h1 {
     grid-area: header;
     font-family: 'Roboto Mono', monospace !important;
-    margin-top: 0;
-    padding-top: 20px;
+    margin: 0;
     text-align: center;
     display: inline-block;
+}
+nav h2 {
+    grid-area: subheader;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
 }
 
 nav a {
@@ -52,9 +59,12 @@ nav ul {
 .navbar {
     color: #fff;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+    align-items: center;   
+    justify-content: center;
+}
+
+.navbar a:hover {
+    color: #1858ce !important;
 }
 
 .hamburger {
@@ -68,12 +78,47 @@ nav ul {
 
 .menu {
     display: flex;
+     justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
 
 .menu li {
     list-style: none;
     padding: 10px;
 }
+
+.menu .menu-items {
+    display: flex;
+}
+
+.menu div {
+    display: flex;
+}
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    float: left;
+    position: absolute;
+    right: 50px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
     .menu {
@@ -83,16 +128,22 @@ nav ul {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        position: absolute;
-        top: 50px;
+        top: 75px;
     }
 
     .menu.show {
         display: flex;
     }
 
+
     .hamburger {
         display: flex;
+    }
+
+    .menu li:last-child {
+    
+        position: unset;
+        margin: 0;
     }
 }
 
